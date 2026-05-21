@@ -267,7 +267,7 @@ st.markdown(f"""
 st.write("---")
 col_vacia1, col_boton_regreso, col_vacia2 = st.columns([1, 1, 1])
 with col_boton_regreso:
-    st.link_button("🔙 Volver al Hub Principal", "https://share.streamlit.io/...", use_container_width=True)
+    st.link_button("🔙 Volver al Hub Principal", "https://future-day-2026-app-bbynemlxetszzudwtcup4u.streamlit.app/", use_container_width=True)
 
 # --- PIE DE PÁGINA ---
 st.write("---")
