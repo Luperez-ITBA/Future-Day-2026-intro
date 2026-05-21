@@ -256,7 +256,7 @@ st.markdown(f"""
                 </div>
             </div>
             <p>
-                Esta es la base del enfoque probabilístico de los <b><i>modelos predictivos</i></b>.
+                Esta es la base del enfoque probabilístico de los <b><i>modelos predictivos</i></b> y el <b><i>entrenamiento estadístico.</i></b>.
             </p>
         </div>
     </div>
