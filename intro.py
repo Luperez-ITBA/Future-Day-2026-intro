@@ -212,7 +212,7 @@ st.markdown(f"""
                 </div>
             </div>
             <p>
-                Sabíamos ya que si tiramos un dado muchas, muchas veces, tendremos números pares, en promedio, la mitad de las veces. Bernoulli y Laplace llevaron esto al extremo, usando el método para calcular la probabilidad de cualquier >b>evento</b>. Estas ideas, tan sencillas como potentes, las seguimos usando hasta la actualidad, cuando con 
+                Sabíamos ya que si tiramos un dado muchas, muchas veces, tendremos números pares, en promedio, la mitad de las veces. Bernoulli y Laplace llevaron esto al extremo, usando el método para calcular la probabilidad de cualquier <b>evento</b>. Estas ideas, tan sencillas como potentes, las seguimos usando hasta la actualidad, cuando con 
                 herramientas computacionales modernas realizamos <b><i>simulaciones</i></b> y <b><i>remuestreos</i></b> en 
                 probabilidades y estadística.
             </p>
