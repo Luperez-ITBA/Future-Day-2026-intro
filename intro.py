@@ -198,11 +198,9 @@ st.markdown(f"""
         <div class="text-side">
             <h2>Probabilidades Frecuenciales</h2>
             <p>
-                Usando una idea de Jacob <b>Bernoulli</b> y Pierre-Simon <b>Laplace</b>, la famosa <b><i>Ley de los Grandes Números</i></b> 
-                podemos computar probabilidades sin necesidad de contar casos, simplemente <b>repetimos</b> el experimento 
-                aleatorio una buena cantidad de veces y la <b>frecuencia de ocurrencia</b> de los eventos se acercará a su 
-                probabilidad. Por ejemplo, si tiramos un dado muchas, muchas veces, tendremos números pares, en promedio, 
-                la mitad de las veces.
+                Usando esa idea muchos años más tarde, los matemáticos Jacob <b>Bernoulli</b> y Pierre-Simon <b>Laplace</b>, establecieron la famosa <b><i>Ley de los Grandes Números</i></b> 
+                : <b>repitiendo </b> un experimento aleatorio una buena cantidad de veces, la <b>frecuencia de ocurrencia</b> de los eventos se acercará a su 
+                probabilidad. 
             </p>
             <div style="text-align: center;">
                 <div class="math-container">
@@ -214,7 +212,7 @@ st.markdown(f"""
                 </div>
             </div>
             <p>
-                Estas ideas, tan sencillas como potentes, las seguimos usando hasta la actualidad, cuando con 
+                Sabíamos ya que si tiramos un dado muchas, muchas veces, tendremos números pares, en promedio, la mitad de las veces. Bernoulli y Laplace llevaron esto al extremo, usando el método para calcular la probabilidad de cualquier >b>evento</b>. Estas ideas, tan sencillas como potentes, las seguimos usando hasta la actualidad, cuando con 
                 herramientas computacionales modernas realizamos <b><i>simulaciones</i></b> y <b><i>remuestreos</i></b> en 
                 probabilidades y estadística.
             </p>
