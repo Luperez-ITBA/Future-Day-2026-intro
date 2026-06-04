@@ -65,6 +65,16 @@ st.markdown("""
     .text-side li {
         margin-bottom: 8px;
     }
+
+    .math-container {
+        background-color: #ffffff;
+        padding: 15px;
+        border-radius: 8px;
+        border: 1px solid #cbd5e1;
+        display: inline-block;
+        margin: 10px 0;
+        box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+    }
     
     @media (max-width: 768px) {
         .intro-box {
@@ -84,11 +94,11 @@ st.markdown("""
 st.title("🎲 Introducción a las Probabilidades")
 st.write("---")
 
-# Renderizado del recuadro con los cambios solicitados por tu jefe
+# --- RECUADRO 1: MODIFICADO A PEDIDO DEL JEFE ---
 st.markdown(f"""
     <div class="intro-box">
         <div class="image-side">
-            <img src="{get_base64_image('dados_romanos.png')}" width="180" alt="Dados Romanos">
+            <img src="{get_base64_image('image_31ad20.png')}" width="180" alt="Dados Romanos">
         </div>
         <div class="text-side">
             <h2>Fenómenos Aleatorios y Regularidades</h2>
@@ -108,6 +118,51 @@ st.markdown(f"""
             </p>
             <p>
                 Esas frecuencias <i>estables</i> son lo que hoy día conocemos como <b><i>probabilidades</i></b>.
+            </p>
+        </div>
+    </div>
+""", unsafe_allow_html=True)
+
+# --- RECUADRO 2: INTACTO ---
+st.markdown(f"""
+    <div class="intro-box">
+        <div class="image-side">
+            <img src="{get_base64_image('image_313bc8.png')}" width="180" alt="Paradoja del Cumpleaños">
+        </div>
+        <div class="text-side">
+            <h2>La Paradoja del Cumpleaños</h2>
+            <p>
+                ¿Sabías que en un grupo de solo 23 personas, la probabilidad de que dos cumplan años el mismo día es mayor al 50%? 
+                Aislados, estos eventos parecen raros, pero al considerar todas las combinaciones posibles de pares, 
+                la probabilidad crece de forma sorprendente. Esto desafía nuestra intuición lineal del azar.
+            </p>
+        </div>
+    </div>
+""", unsafe_allow_html=True)
+
+# --- RECUADRO 3: INTACTO ---
+st.markdown(f"""
+    <div class="intro-box">
+        <div class="image-side">
+            <img src="{get_base64_image('image_8f4464.png')}" width="180" alt="Fenómenos Aleatorios">
+        </div>
+        <div class="text-side">
+            <h2>Fenómenos Aleatorios</h2>
+            <p>
+                Por supuesto, la vida diaria nos bombardea con <b>probabilidades</b> de eventos cotidianos. 
+                El celular nos dice <i>50% de probabilidades de lluvia para esta tarde</i>, un periodista nos dice que 
+                la probabilidad de que gane nuestro equipo es muy alta, etc.
+            </p>
+            <p>
+                En estos casos la idea intuitiva detrás de estos razonamientos es:
+            </p>
+            <div style="text-align: center;">
+                <div class="math-container" style="font-size: 21px;">
+                    <i>P(Evento)</i> = Proporción de veces que el evento ocurrió en el pasado bajo estas condiciones
+                </div>
+            </div>
+            <p>
+                Esta es la base del enfoque probabilístico de los <b><i>modelos predictivos</i></b> y su <b><i>entrenamiento estadístico.</i></b>.
             </p>
         </div>
     </div>
