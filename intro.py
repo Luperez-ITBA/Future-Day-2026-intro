@@ -35,240 +35,86 @@ st.markdown("""
         max-width: 180px;
         text-align: center;
     }
+    
     .image-side img {
-        width: 100%;
-        height: auto;
         border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
 
-    /* Texto e información de la derecha */
+    /* Lado del texto */
     .text-side {
-        flex: 1;
-    }
-    .text-side h2 {
-        color: #001f3f;
-        margin-top: 0;
-        margin-bottom: 15px;
-        font-size: 30px !important;
-    }
-    .text-side p {
-        font-size: 20px !important;
+        flex-grow: 1;
+        font-size: 18px;
         line-height: 1.6;
         color: #1e293b;
+    }
+
+    .text-side h2 {
+        color: #0074D9;
+        margin-top: 0;
         margin-bottom: 15px;
+        font-size: 28px;
     }
-
-    /* Formateo de Fracciones Matemáticas en un recuadro blanco redondeado para resaltar */
-    .math-container {
-        text-align: center; 
-        font-size: 24px; 
-        margin: 15px auto; 
-        color: #001f3f;
-        font-family: 'Times New Roman', Times, serif;
-        background-color: white;
-        padding: 15px 30px;
-        border-radius: 12px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-        display: inline-block;
+    
+    .text-side ul {
+        margin-top: 10px;
+        margin-bottom: 15px;
+        padding-left: 20px;
     }
-    .fraction {
-        display: inline-block; 
-        vertical-align: middle; 
-        text-align: center; 
-        font-size: 21px;
-        margin-left: 5px;
-        margin-right: 5px;
+    
+    .text-side li {
+        margin-bottom: 8px;
     }
-    .numerator {
-        display: block; 
-        border-bottom: 2px solid #001f3f; 
-        padding: 0 10px;
-    }
-    .denominator {
-        display: block; 
-        padding: 5px 10px 0 10px;
-    }
-            
-    .numerator {
-        display: block; 
-        border-bottom: 2px solid #001f3f; 
-        padding: 0 10px;
-    }
-    .denominator {
-        display: block; 
-        padding: 5px 10px 0 10px;
-    }
-
-    /* --- PARCHE RESPONSIVO PARA CELULARES --- */
+    
     @media (max-width: 768px) {
-        h1 { font-size: 26px !important; }
-        h3 { font-size: 16px !important; }
         .intro-box {
-            flex-direction: column !important;
-            padding: 20px !important;
-            gap: 20px !important;
-            text-align: center !important;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
         }
         .image-side {
-            margin: 0 auto !important;
+            min-width: 140px;
+            max-width: 140px;
         }
-        .text-side h2 { font-size: 22px !important; }
-        .text-side p { font-size: 16px !important; }
-        .math-container {
-            font-size: 15px !important;
-            padding: 10px 15px !important;
-            display: block !important;
-            width: 100% !important;
-            box-sizing: border-box !important;
-            word-wrap: break-word !important;
-        }
-        .fraction { font-size: 14px !important; }
     }
     </style>
-    """, unsafe_allow_html=True)
+""", unsafe_allow_html=True)
 
-# --- CABECERA ---
-col_logo, col_titulo = st.columns([1, 4])
-with col_logo:
-    if os.path.exists('logo_itba.png'):
-        st.image('logo_itba.png', width=150)
-    else:
-        st.write("### ITBA")
-with col_titulo:
-    # Título modificado con colores específicos según lo solicitado
-    st.markdown("<h1 style='font-size: 46px; margin-bottom: 0;'><span style='color: #000000;'>Las Probabilidades:</span> <span style='color: #0074D9;'>su Significado y su Cálculo</span></h1>", unsafe_allow_html=True)
-    st.write("Future Day 2026 - Fundamentos del análisis aleatorio")
-
+# Cuerpo principal
+st.title("🎲 Introducción a las Probabilidades")
 st.write("---")
 
-# Carga de imágenes locales
-img_roman = get_base64_image('roman-aleae.png')
-img_laplace = get_base64_image('laplace-bernoulli.png')
-img_dibu = get_base64_image('dibu-rain.png')
-
-
-# --- RECUADRO 1: SIGNIFICADO CLÁSICO ---
+# Renderizado del recuadro con los cambios solicitados por tu jefe
 st.markdown(f"""
     <div class="intro-box">
         <div class="image-side">
-            <img src="{img_roman}" alt="Roman Aleae">
+            <img src="{get_base64_image('dados_romanos.png')}" width="180" alt="Dados Romanos">
         </div>
         <div class="text-side">
-            <h2>Significado de las Probabilidades</h2>
+            <h2>Fenómenos Aleatorios y Regularidades</h2>
             <p>
-                Los romanos fueron pioneros en los juegos de azar, tanto es así que su juego de dados <b><i>aleae</i></b> 
-                ha resultado un modelo para pensar en <b>probabilidades</b> hasta la actualidad.
+                Los romanos fueron pioneros en los juegos de azar, tanto es así que su juego de dados <i>aleae</i> ha resultado un modelo para pensar en probabilidades hasta la actualidad.
             </p>
             <p>
-                Así, sabemos que la <b><i>probabilidad</i></b> de obtener el número 3 al arrojar un dado al azar es de 1/6, 
-                y que la probabilidad de obtener un número par es 1/2. En ambos casos estamos pensando intuitivamente en la <b>fórmula</b>:
+                Al jugar repetidamente fueron notando que, si bien el resultado de un tiro era totalmente impredecible (¡aleatorio!), existían ciertas <b><i>regularidades</i></b>, ya que algunos resultados aparecían regularmente con ciertas <b>frecuencias fijas</b>. Por ejemplo: 
             </p>
-            <div style="text-align: center;">
-                <div class="math-container">
-                    <i>P(Evento)</i> = 
-                    <div class="fraction">
-                        <span class="numerator"># Casos Favorables</span>
-                        <span class="denominator"># Casos Posibles</span>
-                    </div>
-                </div>
-            </div>
+            <ul>
+                <li>Cada número ocurría, en promedio 1/6 de las veces.</li>
+                <li>Los números pares (2,4,6) aparecían en promedio la mitad de las veces, lo mismo que los impares (1,3,5).</li>
+                <li>Ciertas combinaciones, por ejemplo <i>obtener 3 dos veces seguidas</i> salían 1 de cada 36 veces.</li>
+            </ul>
             <p>
-                Con esa idea, resulta también intuitivo que las <i>probabilidades de eventos independientes se multiplican</i>. 
-                Por ejemplo si arrojo dos veces el dado, la probabilidad de obtener 5 dos veces seguidas es:
+                <b>¿Pueden intuir por qué?</b> Hint: ¡pensar en una rifa!  
             </p>
-            <div style="text-align: center;">
-                <div class="math-container">
-                    <div class="fraction">
-                        <span class="numerator">1</span>
-                        <span class="denominator">6</span>
-                    </div>
-                    &middot;
-                    <div class="fraction">
-                        <span class="numerator">1</span>
-                        <span class="denominator">6</span>
-                    </div>
-                    =
-                    <div class="fraction">
-                        <span class="numerator">1</span>
-                        <span class="denominator">36</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-""", unsafe_allow_html=True)
-
-
-# --- RECUADRO 2: ENFOQUE FRECUENCIAL ---
-st.markdown(f"""
-    <div class="intro-box">
-        <div class="image-side">
-            <img src="{img_laplace}" alt="Pierre-Simon Laplace">
-        </div>
-        <div class="text-side">
-            <h2>Probabilidades Frecuenciales</h2>
             <p>
-                Usando una idea de Jacob <b>Bernoulli</b> y Pierre-Simon <b>Laplace</b>, la famosa <b><i>Ley de los Grandes Números</i></b> 
-                podemos computar probabilidades sin necesidad de contar casos, simplemente <b>repetimos</b> el experimento 
-                aleatorio una buena cantidad de veces y la <b>frecuencia de ocurrencia</b> de los eventos se acercará a su 
-                probabilidad. Por ejemplo, si tiramos un dado muchas, muchas veces, tendremos números pares, en promedio, 
-                la mitad de las veces.
-            </p>
-            <div style="text-align: center;">
-                <div class="math-container">
-                    <i>P(Evento)</i> &approx; 
-                    <div class="fraction">
-                        <span class="numerator"># Ocurrencias</span>
-                        <span class="denominator"># Repeticiones</span>
-                    </div>
-                </div>
-            </div>
-            <p>
-                Estas ideas, tan sencillas como potentes, las seguimos usando hasta la actualidad, cuando con 
-                herramientas computacionales modernas realizamos <b><i>simulaciones</i></b> y <b><i>remuestreos</i></b> en 
-                probabilidades y estadística.
+                Esas frecuencias <i>estables</i> son lo que hoy día conocemos como <b><i>probabilidades</i></b>.
             </p>
         </div>
     </div>
 """, unsafe_allow_html=True)
-
-
-# --- RECUADRO 3: ENFOQUE PREDICTIVO / VIDA COTIDIANA ---
-st.markdown(f"""
-    <div class="intro-box">
-        <div class="image-side">
-            <img src="{img_dibu}" alt="Fenómenos Aleatorios en la vida diaria">
-        </div>
-        <div class="text-side">
-            <h2>Fenómenos Aleatorios</h2>
-            <p>
-                Por supuesto, la vida diaria nos bombardea con <b>probabilidades</b> de eventos cotidianos. 
-                El celular nos dice <i>50% de probabilidades de lluvia para esta tarde</i>, un periodista nos dice que 
-                la probabilidad de que gane nuestro equipo es muy alta, etc.
-            </p>
-            <p>
-                En estos casos la idea intuitiva detrás de estos razonamientos es:
-            </p>
-            <div style="text-align: center;">
-                <div class="math-container" style="font-size: 21px;">
-                    <i>P(Evento)</i> = Proporción de veces que el evento ocurrió en el pasado bajo estas condiciones
-                </div>
-            </div>
-            <p>
-                Esta es la base del enfoque probabilístico de los <b><i>modelos predictivos</i></b> y su <b><i>entrenamiento estadístico.</i></b>.
-            </p>
-        </div>
-    </div>
-""", unsafe_allow_html=True)
-
 
 # --- BOTÓN DE RETORNO AL HUB ---
 st.write("---")
 col_vacia1, col_boton_regreso, col_vacia2 = st.columns([1, 1, 1])
 with col_boton_regreso:
-    st.link_button("🔙 Volver al Hub Principal", "https://future-day-2026-app-bbynemlxetszzudwtcup4u.streamlit.app/", use_container_width=True)
-
-# --- PIE DE PÁGINA ---
-st.write("---")
-st.caption("ITBA Future Day 2026 - Departamento de Ciencias Exactas y Naturales")
+    st.link_button("🔙 Volver al Hub Principal", "https://future-day-2026-app-bbynemlxetszzudwtcup4u.streamlit.app/")
